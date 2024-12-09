@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon, Iloilo</title>
+    <link rel="stylesheet" href="/Hugyaw/css/Leon.css">
+</head>
+<body>
+    <audio id="background-audio" autoplay loop>
+        <source src="/Hugyaw/audio/Leon.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/Hugyaw/Festival.php">Home</a></li>
+                <li><a href="/Hugyaw/feedback.php">Feedbacks</a></li>
+                <li><a href="/Hugyaw/quiz.php">Quiz</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Leon</h1>
+        <p>The Summer Capital of Iloilo</p>
+    </header>
+    <section>
+        <h2>About Leon</h2>
+        <p>
+            Leon is a first-class municipality in the province of Iloilo, Philippines, situated 36 kilometers (22 miles) from Iloilo City. With a population of 51,990 based on the 2020 census, Leon is well-known as the "Vegetable Basket of Iloilo" for its abundant production of asparagus, cabbages, Baguio beans, sayote, eggplants, carrots, and other fresh vegetables. The town is politically divided into 85 barangays and has earned a reputation for its thriving agricultural economy and vibrant local culture.
+        </p>
+        <p>
+            Leon is also a favorite destination for nature and culture enthusiasts. Its renowned Bucari Mountain Range, often called the "Summer Capital of Iloilo" and the "Vegetable Garden of Iloilo," attracts visitors with its cool climate and scenic views. Other must-visit spots include the Pineridge Bucari Mountain Resort, the Bucari Pine Forest and Waterfalls, and the historic Leon Church, all offering unique experiences that showcase the town’s natural beauty and heritage.
+        </p>
+    </section>
+    <section>
+        <video id="leon-video" controls>
+            <source src="/Hugyaw/videos/Leon/Leon.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <section>
+        <h2>Festivals</h2>
+        <article>
+            <h3>Kaing Festival</h3>
+            <p>
+                The Kaing Festival celebrates Leon’s rich agricultural heritage and honors the hardworking farmers who contribute to its prosperity. The festival features vibrant parades, traditional dances, and local delicacies, showcasing the town’s culture and achievements.
+            </p>
+            <p>
+                The kaing, a basket woven from bamboo strips, symbolizes abundance and prosperity. This basket played a vital role in Leon’s history, particularly during the 1865 exodus when residents used it to carry their belongings as they moved from the old poblacion in Sitio Camando to the current poblacion site in Sitio Capan.
+            </p>
+            <p>
+                This festival highlights the town’s agricultural success and creativity, emphasizing the unity and resilience of its people.
+            </p>
+        </article>
+        <section>
+            <video controls>
+                <source src="/Hugyaw/videos/Leon/Kaing.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        <article>
+            <h3>Handuraw Festival</h3>
+            <p>
+                The Handuraw Festival is an annual cultural celebration that honors the town’s history, particularly the relocation of the old poblacion to its current site. Held every September 1, this week-long event includes dramatic presentations, storytelling, food festivals, trade fairs, and displays of agricultural produce.
+            </p>
+            <p>
+                Through captivating performances and artistic showcases, the Handuraw Festival reflects Leon’s vibrant spirit, creativity, and deep connection to its past, making it a meaningful tribute to its people and culture.
+            </p>
+        </article>
+    </section>
+    <section class="content">
+        <div class="explanation">
+            <h4>Choose others</h4>
+        </div>
+        <div class="image-container">
+            <div class="image-box">
+                <a href="/Hugyaw/html/Barotac Nuevo.html">
+                    <img src="/Hugyaw/images/Barotac Nuevo/Barotac Nuevo.jpg" alt="Barotac Nuevo">
+                    <p class="text">Barotac Nuevo, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Barotac Viejo.html">
+                    <img src="/Hugyaw/images/Barotac Viejo/Barotac Viejo.jpg" alt="Barotac Viejo">
+                    <p class="text">Barotac Viejo, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Cabatuan.html">
+                    <img src="/Hugyaw/images/Cabatuan/Cabatuan.jpg" alt="Cabatuan">
+                    <p class="text">Cabatuan, Iloilo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Hugyaw | All rights reserved.</p>
+    </footer>
+    <script>
+        const backgroundAudio = document.getElementById('background-audio');
+        const video = document.getElementById('leon-video');
+
+        video.addEventListener('play', () => {
+            backgroundAudio.pause();
+        });
+
+        video.addEventListener('pause', () => {
+            backgroundAudio.play();
+        });
+
+        video.addEventListener('ended', () => {
+            backgroundAudio.play();
+        });
+    </script>
+</body>
+</html>

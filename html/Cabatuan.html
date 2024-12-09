@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabatuan, Iloilo</title>
+    <link rel="stylesheet" href="/Hugyaw/css/Cabatuan.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/Hugyaw/Festival.php">Home</a></li>
+                <li><a href="/Hugyaw/feedback.php">Feedbacks</a></li>
+                <li><a href="/Hugyaw/quiz.php">Quiz</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Cabatuan</h1>
+        <p>The Historical Town of Iloilo</p>
+    </header>
+    <section>
+        <h2>About Cabatuan</h2>
+        <p>
+            Cabatuan is a municipality in Iloilo, Philippines, known for its historical and cultural significance. 
+                The town is celebrated for its rich heritage and the unique Tinuom Festival. Cabatuan's culinary traditions, 
+                such as the famous Tinuom dish, and its devotion to San Nicolas de Tolentino reflect the spirit and pride of its people.
+        </p>
+    </section>
+    <section>
+        <video id="cabatuan-video" controls>
+            <source src="/Hugyaw/videos/Cabatuan/Cabatuan.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section>
+        <h2>Festivals</h2>
+        <article>
+            <h3>Tinuom Festival</h3>
+            <p>
+                The Tinuom Festival is a culinary and cultural celebration that showcases Cabatuan's signature dish, Tinuom, a 
+                hearty chicken soup wrapped and cooked in banana leaves. This festival also honors San Nicolas de Tolentino, 
+                the town's patron saint. The Tinuom Festival features colorful street dances, religious activities, and cultural 
+                presentations, drawing visitors to experience Cabatuan's unique identity.
+            </p>
+        </article>
+    </section>
+    <section class="content">
+        <div class="explanation">
+            <h4>Choose others</h4>
+        </div>
+        <div class="image-container">
+            <div class="image-box">
+                <a href="/Hugyaw/html/Barotac Nuevo.html">
+                    <img src="/Hugyaw/images/Barotac Nuevo/Barotac Nuevo.jpg" alt="Barotac Viejo">
+                    <p class="text">Barotac Nuevo, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Barotac Viejo.html">
+                    <img src="/Hugyaw/images/Barotac Viejo/Barotac Viejo.jpg" alt="Barotac Viejo">
+                    <p class="text">Barotac Viejo, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Leon.html">
+                    <img src="/Hugyaw/images/Leon/Leon.jpg" alt="Leon">
+                    <p class="text">Leon, Iloilo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Hugyaw | All rights reserved.</p>
+    </footer>
+    <script>
+        const backgroundAudio = document.getElementById('background-audio');
+        const video = document.getElementById('cabatuan-video');
+
+        video.addEventListener('play', () => {
+            backgroundAudio.pause();
+        });
+
+        video.addEventListener('pause', () => {
+            backgroundAudio.play();
+        });
+
+        video.addEventListener('ended', () => {
+            backgroundAudio.play();
+        });
+    </script>
+</body>
+</html>

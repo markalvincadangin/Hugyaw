@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barotac Viejo, Iloilo</title>
+    <link rel="stylesheet" href="/Hugyaw/css/Barotac Viejo.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/Hugyaw/Festival.php">Home</a></li>
+                <li><a href="/Hugyaw/feedback.php">Feedbacks</a></li>
+                <li><a href="/Hugyaw/quiz.php">Quiz</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Barotac Viejo</h1>
+        <p>The Harvest Capital of Iloilo</p>
+    </header>
+    <section>
+        <h2>About Barotac Viejo</h2>
+        <p>
+            Located in Iloilo, Barotac Viejo is a picturesque municipality renowned for its rich agricultural heritage. 
+            The town thrives on its agricultural success, earning its title as the Harvest Capital of Iloilo. 
+            Home to lush farmlands and a close-knit community, Barotac Viejo celebrates its agricultural roots 
+            with pride and joy through its vibrant festivals and cultural activities.
+        </p>
+    </section>
+    <section>
+        <video id="viejo-video" controls>
+            <source src="/Hugyaw/videos/Barotac Viejo/Barotac Viejo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <section>
+        <h2>Festivals</h2>
+        <article>
+            <h3>Patubas Festival</h3>
+            <p>
+                Patubas Festival is Barotac Viejo's grand celebration of its agricultural abundance and cultural identity.
+                The term "Patubas" translates to "harvest" in Hiligaynon, reflecting the town's gratitude for a bountiful yield. 
+                This lively event features colorful street dances, agricultural fairs, and cultural presentations that highlight the hard work and unity of the local farming community.
+            </p>
+        </article>
+        <section>
+            <video controls>
+                <source src="/Hugyaw/videos/Barotac Viejo/Patubas.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </section>
+    <section class="content">
+        <div class="explanation">
+            <h4>Choose others</h4>
+        </div>
+        <div class="image-container">
+            <div class="image-box">
+                <a href="/Hugyaw/html/Barotac Nuevo.html">
+                    <img src="/Hugyaw/images/Barotac Nuevo/Barotac Nuevo.jpg" alt="Barotac Viejo">
+                    <p class="text">Barotac Nuevo, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Leon.html">
+                    <img src="/Hugyaw/images/Leon/Leon.jpg" alt="Leon">
+                    <p class="text">Leon, Iloilo</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="/Hugyaw/html/Cabatuan.html">
+                    <img src="/Hugyaw/images/Cabatuan/Cabatuan.jpg" alt="Cabatuan">
+                    <p class="text">Cabatuan, Iloilo</p>
+                </a>
+            </div> 
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Hugyaw | All rights reserved.</p>
+    </footer>
+    <script>
+        const backgroundAudio = document.getElementById('background-audio');
+        const video = document.getElementById('viejo-video');
+
+        video.addEventListener('play', () => {
+            backgroundAudio.pause();
+        });
+
+        video.addEventListener('pause', () => {
+            backgroundAudio.play();
+        });
+
+        video.addEventListener('ended', () => {
+            backgroundAudio.play();
+        });
+    </script>
+</body>
+</html>
