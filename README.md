@@ -120,21 +120,21 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
      **Insert Quiz Questions:**
      ```sql
      INSERT INTO quiz_questions (question, option1, option2, option3, option4, correct_option) VALUES
-     ('What is the primary meaning of the word "Patubas" in Hiligaynon?', 'Unity', 'Harvest', 'Culture', 'Diversity', 2),
-     ('Which of the following activities is NOT a highlight of the Patubas Festival?', 'Street Dancing and Float Parade', 'Agro-Industrial Fair', 'Musical Band Competition', 'Cultural Performance', 3),
-     ('What does the Patubas Festival emphasize about Barotac Viejo\'s community?', 'Their historical landmarks', 'Their gratitude for a bountiful harvest', 'Their resistance to Moro pirates', 'Their focus on modern technology', 2),
-     ('During the Spanish era, what does the term "Baluarte," the origin of Barotac\'s name, refer to?', 'An agricultural tool', 'A fortification or watchtower', 'A festival dance', 'A religious ceremony', 2),
-     ('Which sector does the Patubas Festival aim to promote and highlight?', 'Industrial development', 'Technological advancements', 'Agricultural productivity', 'Religious unity', 3),
-     ('What is Leon, Iloilo, popularly known as?', 'Summer Capital of Iloilo', 'Vegetable Basket of Iloilo', 'Agricultural Hub of the Philippines', 'Historical Town of Iloilo', 2),
-     ('What does the Kaing Festival primarily celebrate?', 'The cultural heritage of Leon', 'The bravery of the town’s ancestors', 'The agricultural abundance and farmers of Leon', 'The history of Bucari as a tourist destination', 3),
-     ('What does the term "Kaing" refer to in the context of Leon\'s festival?', 'A type of vegetable grown in Leon', 'A traditional woven basket for carrying produce', 'A historic figure in Leon\'s past and future', 'A dance performed during the festival', 2),
-     ('What is the main focus of the Handuraw Festival?', 'Showcasing eco-tourism and farming practices', 'Reflecting on Leon’s history and cultural traditions', 'Promoting the town local produce', 'Celebrating modern progress in the town', 2),
-     ('What popular eco-tourism destination in Leon is often visited during festivals?', 'Bucari', 'Camando', 'Iloilo River', 'Pavia Highlands', 1),
-     ('What is Cabatuan historically known for?', 'Its famous dish, Tinuom', 'The "Sinulugans" and their art of sword fighting', 'Being the agricultural center of Iloilo and Visayas', 'The production of banana leaves and tobacco', 2),
-     ('When is the Tinuom Festival celebrated?', 'Every April 9', 'During the Christmas season', 'The first Sunday of September, lasting for 10 days', 'Every November', 3),
-     ('What does the Tinuom Festival primarily honor?', 'The art of sword fighting and dragon dance', 'The agricultural and economic productivity of Cabatuan', 'The patron saint, San Nicolas de Tolentino, and the Tinuom dish', 'The foundation of Cabatuan', 3),
-     ('What is Tinuom, as celebrated in the Tinuom Festival?', 'A witch craft ritual', 'A native chicken soup with spices, wrapped in banana leaves', 'A form of traditional dance', 'A sword-fighting performance', 2),
-     ('What significant event marked the establishment of Cabatuan in 1732?', 'The first Tinuom Festival', 'The arrival of Spanish settlers', 'The placement of a molave cross on Pamul-ogan Hill', 'The time when Romeo and Juliet was produced', 3);
+   ('What is Leon, Iloilo, popularly known as?', 'Summer Capital of Iloilo', 'Vegetable Basket of Iloilo', 'Agricultural Hub of the Philippines', 'Historical Town of Iloilo', 1),
+   ('What does the Kaing Festival in Leon primarily celebrate?', 'The cultural heritage of Leon', 'The bravery of the town’s ancestors', 'The agricultural abundance and farmers of Leon', 'The history of Bucari as a tourist destination', 3),
+   ('What is the main focus of the Handuraw Festival in Leon?', 'Showcasing eco-tourism and farming practices', 'Reflecting on Leon’s history and cultural traditions', 'Promoting the town local produce', 'Celebrating modern progress in the town', 2),
+   ('What popular eco-tourism destination in Leon is often visited during festivals?', 'Bucari', 'Camando', 'Iloilo River', 'Pavia Highlands', 1),
+   ('What is Barotac Nuevo known for?', 'Its love of football', 'Its historical landmarks', 'Its agricultural productivity', 'Its modern technology', 1),
+   ('What does the Tamasak Festival in Barotac Nuevo celebrate?', 'The town’s rich history and heritage', 'The bravery of the town’s ancestors', 'The agricultural abundance and farmers of Barotac Nuevo', 'The history of Bucari as a tourist destination', 1),
+   ('What is the Hili-usa Festival in Barotac Nuevo known for?', 'Showcasing eco-tourism and farming practices', 'Reflecting on Barotac Nuevo’s history and cultural traditions', 'Promoting the town local produce', 'Celebrating the unity and collective spirit of its people', 4),
+   ('What is Cabatuan historically known for?', 'Its famous dish, Tinuom', 'The "Sinulugans" and their art of sword fighting', 'Being the agricultural center of Iloilo and Visayas', 'The production of banana leaves and tobacco', 1),
+   ('When is the Tinuom Festival in Cabatuan celebrated?', 'Every April 9', 'During the Christmas season', 'The first Sunday of September, lasting for 10 days', 'Every November', 3),
+   ('What does the Tinuom Festival in Cabatuan primarily honor?', 'The art of sword fighting and dragon dance', 'The agricultural and economic productivity of Cabatuan', 'The patron saint, San Nicolas de Tolentino, and the Tinuom dish', 'The foundation of Cabatuan', 3),
+   ('What is Tinuom, as celebrated in the Tinuom Festival in Cabatuan?', 'A witch craft ritual', 'A native chicken soup with spices, wrapped in banana leaves', 'A form of traditional dance', 'A sword-fighting performance', 2),
+   ('What significant event marked the establishment of Cabatuan in 1732?', 'The first Tinuom Festival', 'The arrival of Spanish settlers', 'The placement of a molave cross on Pamul-ogan Hill', 'The time when Romeo and Juliet was produced', 3),
+   ('What does the Patubas Festival in Barotac Viejo celebrate?', 'The town’s rich history and heritage', 'The bravery of the town’s ancestors', 'The agricultural abundance and farmers of Barotac Viejo', 'The history of Bucari as a tourist destination', 3),
+   ('What does the term "Patubas" mean in Hiligaynon?', 'Unity', 'Harvest', 'Culture', 'Diversity', 2),
+   ('Which of the following activities is NOT a highlight of the Patubas Festival in Barotac Viejo?', 'Street Dancing and Float Parade', 'Agro-Industrial Fair', 'Musical Band Competition', 'Cultural Performance', 3);
      ```
 
    - Click "Go" to execute the queries.
