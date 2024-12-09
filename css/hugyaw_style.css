@@ -87,7 +87,7 @@ body {
 }
 
 .content {
-    background: #f4f4f9;
+    background:  #f3e7d3;
     color: #333;
     padding: 2rem 5%;
     text-align: center;
@@ -118,7 +118,7 @@ body {
     height: auto;       
     position: relative;  
     background: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid  #fda828; 
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;

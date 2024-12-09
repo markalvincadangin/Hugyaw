@@ -43,7 +43,7 @@ header {
 
 .nav-links a:hover {
     color: #fff; 
-    background-color: #f39c12;
+    background-color: #e8fce8; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
@@ -61,6 +61,7 @@ header p {
 
 section {
     padding: 2rem 1rem;
+    background: #e8fce8; 
 }
 
 section h2 {
@@ -100,7 +101,7 @@ video {
     display: block; 
 }
 .content {
-    background: #f4f4f9;
+    background: #e8fce8; 
     color: #333;
     padding: 2rem 5%;
     text-align: center;
@@ -122,8 +123,8 @@ video {
     width: 100%;        
     height: auto;       
     position: relative;  
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #e8fce8;
+    border: 3px solid #4CAF50;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
@@ -143,7 +144,7 @@ video {
     margin: 1rem 0;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #fdfcfc;
+    color:#e8fce8;
     text-align: center;
     text-shadow: 4px 4px 10px rgba(1, 1, 1, 1.5);
 }

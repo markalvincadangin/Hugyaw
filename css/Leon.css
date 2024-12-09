@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9;
+    background-color: #ffdbe6;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ header {
 
 .nav-links a:hover {
     color: #fff; 
-    background-color: #f39c12;
+    background-color: #8e8ef4;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
@@ -61,12 +61,13 @@ header p {
 
 section {
     padding: 2rem 1rem;
+    background: #d1d1ff;
 }
 
 section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #4CAF50;
+    color:  #8e8ef4;
 }
 
 section p {
@@ -95,12 +96,12 @@ video {
     max-width: 1000px; 
     height: auto; 
     margin: 1.5rem auto;
-    border: 3px solid #4CAF50; 
+    border: 3px solid  #8e8ef4;
     border-radius: 10px; 
     display: block; 
 }
 .content {
-    background: #f4f4f9;
+    background: #ffdbe6;
     color: #333;
     padding: 2rem 5%;
     text-align: center;
@@ -122,8 +123,8 @@ video {
     width: 100%;        
     height: auto;       
     position: relative;  
-    background: #fff;
-    border: 1px solid #ddd;
+    background:  #ffdbe6;
+    border: 3px solid #f48e9c;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
