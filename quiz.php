@@ -84,5 +84,8 @@ $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
             <input type="hidden" id="score" name="score">
         </form>
     </main>
+    <footer>
+        <p>© 2024 Hugyaw | All rights reserved.</p>
+    </footer>
 </body>
 </html>
