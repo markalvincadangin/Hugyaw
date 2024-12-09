@@ -6,8 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch feedback from the database
-$feedbackQuery = "SELECT f.comment, m.name AS municipality_name FROM feedback f JOIN municipalities m ON f.municipality_id = m.id ORDER BY f.created_at DESC";
+$feedbackQuery = "SELECT f.comment, m.name AS municipality_name, u.username FROM feedback f JOIN municipalities m ON f.municipality_id = m.id JOIN users u ON f.user_id = u.id ORDER BY f.created_at DESC";
 $feedbackResult = $conn->query($feedbackQuery);
 
 if (!$feedbackResult) {
@@ -22,7 +21,7 @@ $feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festivals</title>
+    <title>Hugyaw.com</title>
     <link rel="stylesheet" href="css/hugyaw_style.css">
 </head>
 <body>
@@ -94,7 +93,7 @@ $feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
             <ul class="feedback-list">
                 <?php foreach ($feedbacks as $feedback): ?>
                     <li>
-                        <strong><?php echo htmlspecialchars($feedback['municipality_name']); ?>:</strong>
+                        <strong><?php echo htmlspecialchars($feedback['username']); ?> (<?php echo htmlspecialchars($feedback['municipality_name']); ?>):</strong>
                         <?php echo htmlspecialchars($feedback['comment']); ?>
                     </li>
                 <?php endforeach; ?>

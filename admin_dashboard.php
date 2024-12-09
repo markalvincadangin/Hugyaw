@@ -7,7 +7,116 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
     exit();
 }
 
-// Handle form submissions and fetch data (omitted for brevity)
+// Add question
+if (isset($_POST['add_question'])) {
+    $question = $_POST['question'];
+    $option1 = $_POST['option1'];
+    $option2 = $_POST['option2'];
+    $option3 = $_POST['option3'];
+    $option4 = $_POST['option4'];
+    $correct_option = $_POST['correct_option'];
+    $insertQuery = "INSERT INTO quiz_questions (question, option1, option2, option3, option4, correct_option) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($insertQuery);
+    $stmt->bind_param("sssssi", $question, $option1, $option2, $option3, $option4, $correct_option);
+    if ($stmt->execute()) {
+        echo "Question added successfully.";
+    } else {
+        echo "Error adding question: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Edit question
+if (isset($_POST['edit_question'])) {
+    $question_id = $_POST['question_id'];
+    $question = $_POST['question'];
+    $option1 = $_POST['option1'];
+    $option2 = $_POST['option2'];
+    $option3 = $_POST['option3'];
+    $option4 = $_POST['option4'];
+    $correct_option = $_POST['correct_option'];
+    $updateQuery = "UPDATE quiz_questions SET question = ?, option1 = ?, option2 = ?, option3 = ?, option4 = ?, correct_option = ? WHERE id = ?";
+    $stmt = $conn->prepare($updateQuery);
+    $stmt->bind_param("ssssssi", $question, $option1, $option2, $option3, $option4, $correct_option, $question_id);
+    if ($stmt->execute()) {
+        echo "Question updated successfully.";
+    } else {
+        echo "Error updating question: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Delete question 
+if (isset($_POST['delete_question'])) {
+    $question_id = $_POST['question_id'];
+    $deleteQuery = "DELETE FROM quiz_questions WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $question_id);
+    if ($stmt->execute()) {
+        echo "Question deleted successfully.";
+    } else {
+        echo "Error deleting question: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Delete feedback 
+if (isset($_POST['delete_feedback'])) {
+    $feedback_id = $_POST['feedback_id'];
+    $deleteQuery = "DELETE FROM feedback WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $feedback_id);
+    if ($stmt->execute()) {
+        echo "Feedback deleted successfully.";
+    } else {
+        echo "Error deleting feedback: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Edit user name and role 
+if (isset($_POST['edit_user'])) {
+    $user_id = $_POST['user_id'];
+    $username = $_POST['username'];
+    $role = $_POST['role'];
+    $updateQuery = "UPDATE users SET username = ?, role = ? WHERE id = ?";
+    $stmt = $conn->prepare($updateQuery);
+    $stmt->bind_param("ssi", $username, $role, $user_id);
+    if ($stmt->execute()) {
+        echo "User updated successfully.";
+    } else {
+        echo "Error updating user: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Delete user 
+if (isset($_POST['delete_user'])) {
+    $user_id = $_POST['user_id'];
+    $deleteQuery = "DELETE FROM users WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $user_id);
+    if ($stmt->execute()) {
+        echo "User deleted successfully.";
+    } else {
+        echo "Error deleting user: " . $conn->error;
+    }
+    $stmt->close();
+}
+
+// Delete score
+if (isset($_POST['delete_score'])) {
+    $score_id = $_POST['score_id'];
+    $deleteQuery = "DELETE FROM quiz_scores WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $score_id);
+    if ($stmt->execute()) {
+        echo "Score deleted successfully.";
+    } else {
+        echo "Error deleting score: " . $conn->error;
+    }
+    $stmt->close();
+}
 
 // Fetch all quiz questions
 $questionsQuery = "SELECT * FROM quiz_questions";
@@ -20,7 +129,7 @@ if (!$questionsResult) {
 $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
 
 // Fetch all feedback
-$feedbackQuery = "SELECT * FROM feedback";
+$feedbackQuery = "SELECT f.*, u.username FROM feedback f JOIN users u ON f.user_id = u.id ORDER BY f.created_at DESC";
 $feedbackResult = $conn->query($feedbackQuery);
 
 if (!$feedbackResult) {
@@ -74,6 +183,9 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                 <li><a href="Festival.php">Home</a></li>
                 <li><a href="feedback.php">Feedbacks</a></li>
                 <li><a href="quiz.php">Quiz</a></li>
+                <?php if ($_SESSION['role'] == 'admin'): ?>
+                    <li><a href="admin_dashboard.php">Admin</a></li>
+                <?php endif; ?>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -143,11 +255,6 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                     <div class="feedback">
                         <p><strong><?php echo htmlspecialchars($comment['username']); ?>:</strong> <?php echo htmlspecialchars($comment['comment']); ?></p>
                         <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
-                        <form action="admin_dashboard.php" method="POST" class="edit-feedback-form">
-                            <input type="hidden" name="feedback_id" value="<?php echo $comment['id']; ?>">
-                            <textarea name="comment" rows="2" cols="50" required><?php echo htmlspecialchars($comment['comment']); ?></textarea><br><br>
-                            <input type="submit" name="edit_feedback" value="Edit">
-                        </form>
                         <form action="admin_dashboard.php" method="POST" class="delete-feedback-form">
                             <input type="hidden" name="feedback_id" value="<?php echo $comment['id']; ?>">
                             <input type="submit" name="delete_feedback" value="Delete">

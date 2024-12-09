@@ -70,6 +70,7 @@ main {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    position: relative; /* Add this to position the button */
 }
 
 #question-container {
@@ -104,11 +105,35 @@ main {
 }
 
 .option:hover {
-    background-color: #855d1d;
+    background-color: #6a4c1c;
     transform: scale(1.05);
 }
 
 .option:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.restart-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: absolute; /* Position it at the bottom right */
+    bottom: 20px;
+    right: 20px;
+}
+
+.restart-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.restart-button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }

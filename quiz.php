@@ -58,6 +58,10 @@ $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
             }
         }
 
+        function restartQuiz() {
+            location.reload(); // Reload the page to fetch new random questions
+        }
+
         window.onload = function() {
             showQuestion(currentQuestionIndex);
         }
@@ -69,7 +73,9 @@ $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
             <ul class="nav-links">
                 <li><a href="Festival.php">Home</a></li>
                 <li><a href="feedback.php">Feedbacks</a></li>
-                <li><a href="quiz.php">Quiz</a></li>
+                <?php if ($_SESSION['role'] == 'admin'): ?>
+                    <li><a href="admin_dashboard.php">Admin</a></li>
+                <?php endif; ?>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -83,6 +89,7 @@ $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
             </div>
             <input type="hidden" id="score" name="score">
         </form>
+        <button onclick="restartQuiz()" class="restart-button">Restart Quiz</button>
     </main>
     <footer>
         <p>© 2024 Hugyaw | All rights reserved.</p>

@@ -2,26 +2,36 @@
 include 'db_connection.php';
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password, role FROM users WHERE username = ?");
+    // Fetch the user from the database
+    $query = "SELECT * FROM users WHERE username = ?";
+    $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $username);
     $stmt->execute();
-    $stmt->bind_result($id, $hashed_password, $role);
-    $stmt->fetch();
-    $stmt->close();
+    $result = $stmt->get_result();
 
-    if (password_verify($password, $hashed_password)) {
-        $_SESSION['user_id'] = $id;
-        $_SESSION['username'] = $username;
-        $_SESSION['role'] = $role;
-        header("Location: Festival.php");
-        exit();
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        // Verify the password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role'];
+            // Redirect to the appropriate page
+            header("Location: Festival.php");
+            exit();
+        } else {
+            $error = "Invalid username or password.";
+        }
     } else {
-        $error = "Invalid username or password";
+        $error = "Invalid username or password.";
     }
+    $stmt->close();
+    $conn->close();
 }
 ?>
 

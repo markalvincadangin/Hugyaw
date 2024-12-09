@@ -63,68 +63,37 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
-.action-section {
-    padding: 2rem 5%;
-    background-color: #fff;
-    color: #333;
-    text-align: left;
+main {
+    max-width: 1000px;
     margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.action-section h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.action-section select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 2rem;
     background-color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.action-section select:hover {
-    background-color: #f4f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .admin-section {
-    padding: 2rem 5%;
-    background-color: #fff;
-    color: #333;
-    text-align: left;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.admin-section h1, .admin-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.admin-form {
     margin-bottom: 2rem;
 }
 
-.admin-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
+.admin-section h2 {
+    margin-bottom: 1rem;
+    color: #fda828;
 }
 
-.admin-form input[type="text"], .admin-form textarea, .admin-form input[type="number"], .admin-form input[type="submit"], .admin-form select {
+.admin-form {
+    margin-bottom: 1rem;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.admin-form input[type="text"], .admin-form input[type="password"], .admin-form select, .admin-form textarea {
     width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
+    padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -134,7 +103,9 @@ header {
     background-color: #fda828;
     color: white;
     border: none;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
@@ -142,113 +113,18 @@ header {
     background-color: #f39c12;
 }
 
-.feedback-section, .user-section {
-    padding: 2rem 5%;
-    background-color: #fff;
-    color: #333;
-    text-align: left;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.feedback-section h2, .user-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.feedback, .user, .score {
-    background-color: #f4f4f9;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.feedback p, .user p, .score p {
-    margin: 0.5rem 0;
-}
-
-.edit-feedback-form textarea, .delete-feedback-form input[type="submit"], .edit-user-form input[type="submit"], .delete-user-form input[type="submit"], .delete-score-form input[type="submit"] {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.edit-feedback-form input[type="submit"], .delete-feedback-form input[type="submit"], .edit-user-form input[type="submit"], .delete-user-form input[type="submit"], .delete-score-form input[type="submit"] {
-    background-color: #fda828;
+.delete-user-form input[type="submit"], .delete-score-form input[type="submit"] {
+    background-color: #c26f21;
     color: white;
     border: none;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
+    border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-.edit-feedback-form input[type="submit"]:hover, .delete-feedback-form input[type="submit"]:hover, .edit-user-form input[type="submit"]:hover, .delete-user-form input[type="submit"]:hover, .delete-score-form input[type="submit"]:hover {
-    background-color: #f39c12;
-}
-
-.score-section {
-    padding: 2rem 5%;
-    background-color: #fff;
-    color: #333;
-    text-align: left;
-    margin: 2rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.score-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.score {
-    background-color: #f4f4f9;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.score p {
-    margin: 0.5rem 0;
-}
-
-.delete-score-form input[type="submit"] {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fda828;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.delete-score-form input[type="submit"]:hover {
-    background-color: #f39c12;
-}
-
-select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-select:hover {
-    background-color: #f4f4f9;
+.delete-user-form input[type="submit"]:hover, .delete-score-form input[type="submit"]:hover {
+    background-color: #a35b17;
 }
 
 footer {
