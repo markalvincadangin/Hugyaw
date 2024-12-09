@@ -43,7 +43,7 @@ header {
 
 .nav-links a:hover {
     color: #fff; 
-    background-color: #f39c12;
+    background-color:#4c6aaf
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
@@ -60,12 +60,13 @@ header p {
 
 section {
     padding: 2rem 1rem;
+    background: #dadafc;
 }
 
 section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #4CAF50;
+    color: #4c6aaf;
 }
 
 section p {
@@ -94,12 +95,12 @@ video {
     max-width: 1000px; 
     height: auto; 
     margin: 1.5rem auto;
-    border: 3px solid #4CAF50; 
+    border: 3px solid #4c6aaf; 
     border-radius: 10px; 
     display: block; 
 }
 .content {
-    background: #f4f4f9;
+    background: #dadafc;
     color: #333;
     padding: 2rem 5%;
     text-align: center;
@@ -121,8 +122,8 @@ video {
     width: 100%;        
     height: auto;       
     position: relative;  
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #dadafc;
+    border: 3px solid#4c6aaf;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s;
