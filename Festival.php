@@ -1,9 +1,20 @@
 <?php
+include 'db_connection.php';
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+// Fetch feedback from the database
+$feedbackQuery = "SELECT f.comment, m.name AS municipality_name FROM feedback f JOIN municipalities m ON f.municipality_id = m.id ORDER BY f.created_at DESC";
+$feedbackResult = $conn->query($feedbackQuery);
+
+if (!$feedbackResult) {
+    die("Query failed: " . $conn->error);
+}
+
+$feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +87,21 @@ if (!isset($_SESSION['user_id'])) {
                 </a>
             </div>
         </div>
+    </section>
+    <section class="feedback-section">
+        <h2>Feedback</h2>
+        <?php if (count($feedbacks) > 0): ?>
+            <ul class="feedback-list">
+                <?php foreach ($feedbacks as $feedback): ?>
+                    <li>
+                        <strong><?php echo htmlspecialchars($feedback['municipality_name']); ?>:</strong>
+                        <?php echo htmlspecialchars($feedback['comment']); ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php else: ?>
+            <p>No feedback available.</p>
+        <?php endif; ?>
     </section>
     <footer>
         <p>© 2024 Hugyaw | All rights reserved.</p>
