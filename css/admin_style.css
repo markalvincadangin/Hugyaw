@@ -108,17 +108,18 @@ main {
     color: #fda828;
 }
 
-.admin-form {
+/* Manage Quiz Questions */
+.quiz-form {
     margin-bottom: 1rem;
 }
 
-.admin-form label {
+.quiz-form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-.admin-form input[type="text"], .admin-form input[type="password"], .admin-form select, .admin-form textarea {
+.quiz-form input[type="text"], .quiz-form input[type="password"], .quiz-form select, .quiz-form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -126,7 +127,7 @@ main {
     border-radius: 4px;
 }
 
-.admin-form .edit-button, .admin-form .delete-button {
+.quiz-form .edit-button, .quiz-form .delete-button {
     padding: 0.75rem 1.5rem;
     border: none;
     cursor: pointer;
@@ -134,21 +135,156 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.admin-form .edit-button {
+.quiz-form .edit-button {
     background-color: #29b2bf;
     color: white;
 }
 
-.admin-form .edit-button:hover {
+.quiz-form .edit-button:hover {
     background-color: #09a3b1;
 }
 
-.admin-form .delete-button {
+.quiz-form .delete-button {
     background-color: #c26f21;
     color: white;
 }
 
-.admin-form .delete-button:hover {
+.quiz-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Feedback */
+.feedback-form {
+    margin-bottom: 1rem;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.feedback-form input[type="text"], .feedback-form input[type="password"], .feedback-form select, .feedback-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.feedback-form .edit-button, .feedback-form .delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.feedback-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.feedback-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.feedback-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Users */
+.user-form {
+    margin-bottom: 1rem;
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.user-form input[type="text"], .user-form input[type="password"], .user-form select, .user-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.user-form .edit-button, .user-form .delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.user-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.user-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.user-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.user-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Scores */
+.score-form {
+    margin-bottom: 1rem;
+}
+
+.score-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.score-form input[type="text"], .score-form input[type="password"], .score-form select, .score-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.score-form .edit-button, .score-form .delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.score-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.score-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.score-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.score-form .delete-button:hover {
     background-color: #a35b17;
 }
 

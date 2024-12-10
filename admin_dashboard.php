@@ -183,9 +183,6 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                 <li><a href="Festival.php">Home</a></li>
                 <li><a href="feedback.php">Feedbacks</a></li>
                 <li><a href="quiz.php">Quiz</a></li>
-                <?php if ($_SESSION['role'] == 'admin'): ?>
-                    <li><a href="admin_dashboard.php">Admin</a></li>
-                <?php endif; ?>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
@@ -207,7 +204,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
         <!-- Manage Quiz Questions -->
         <section id="quiz-section" class="admin-section" style="display:none;">
             <h2>Manage Quiz Questions</h2>
-            <form action="admin_dashboard.php" method="POST" class="admin-form">
+            <form action="admin_dashboard.php" method="POST" class="quiz-form">
                 <label for="question">Question:</label>
                 <textarea name="question" id="question" rows="4" required></textarea><br><br>
                 <label for="option1">Option 1:</label>
@@ -224,7 +221,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
             </form>
 
             <?php foreach ($questions as $question): ?>
-                <form action="admin_dashboard.php" method="POST" class="admin-form">
+                <form action="admin_dashboard.php" method="POST" class="quiz-form">
                     <input type="hidden" name="question_id" value="<?php echo $question['id']; ?>">
                     <label for="question">Question:</label>
                     <textarea name="question" rows="4" required><?php echo htmlspecialchars($question['question']); ?></textarea><br><br>
@@ -255,7 +252,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                     <div class="feedback">
                         <p><strong><?php echo htmlspecialchars($comment['username']); ?>:</strong> <?php echo htmlspecialchars($comment['comment']); ?></p>
                         <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
-                        <form action="admin_dashboard.php" method="POST" class="delete-feedback-form">
+                        <form action="admin_dashboard.php" method="POST" class="feedback-form">
                             <input type="hidden" name="feedback_id" value="<?php echo $comment['id']; ?>">
                             <input type="submit" name="delete_feedback" value="Delete" class="delete-button">
                         </form>
@@ -272,7 +269,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                 <div class="user">
                     <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
                     <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
-                    <form action="admin_dashboard.php" method="POST" class="edit-user-form">
+                    <form action="admin_dashboard.php" method="POST" class="user-form">
                         <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
                         <label for="username-<?php echo $user['id']; ?>">Username:</label>
                         <input type="text" id="username-<?php echo $user['id']; ?>" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
@@ -283,7 +280,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                         </select><br><br>
                         <input type="submit" name="edit_user" value="Edit User" class="edit-button">
                     </form>
-                    <form action="admin_dashboard.php" method="POST" class="delete-user-form">
+                    <form action="admin_dashboard.php" method="POST" class="user-form">
                         <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
                         <input type="submit" name="delete_user" value="Delete User" class="delete-button">
                     </form>
@@ -302,7 +299,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                     <div class="score">
                         <p><strong>Username:</strong> <?php echo htmlspecialchars($score['username']); ?></p>
                         <p><strong>Score:</strong> <?php echo htmlspecialchars($score['score']); ?></p>
-                        <form action="admin_dashboard.php" method="POST" class="delete-score-form">
+                        <form action="admin_dashboard.php" method="POST" class="score-form">
                             <input type="hidden" name="score_id" value="<?php echo $score['id']; ?>">
                             <input type="submit" name="delete_score" value="Delete Score" class="delete-button">
                         </form>
