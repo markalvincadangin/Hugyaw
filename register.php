@@ -2,23 +2,31 @@
 include 'db_connection.php';
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $role = 'user'; // Default role
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $role = isset($_POST['role']) ? $_POST['role'] : 'user';
 
-    // Only allow admin to set roles
-    if (isset($_SESSION['user_id']) && $_SESSION['role'] == 'admin' && isset($_POST['role'])) {
-        $role = $_POST['role'];
-    }
-
-    $stmt = $conn->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $password, $role);
+    $checkQuery = "SELECT * FROM users WHERE username = ?";
+    $stmt = $conn->prepare($checkQuery);
+    $stmt->bind_param("s", $username);
     $stmt->execute();
-    $stmt->close();
+    $result = $stmt->get_result();
 
-    header("Location: login.php");
-    exit();
+    if ($result->num_rows > 0) {
+        $error = "Username already exists.";
+    } else {
+        $insertQuery = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($insertQuery);
+        $stmt->bind_param("sss", $username, $password, $role);
+        if ($stmt->execute()) {
+            $success = "Registration successful. You can now <a href='/Hugyaw/login.php'>login</a>.";
+        } else {
+            $error = "Error registering user: " . $conn->error;
+        }
+    }
+    $stmt->close();
+    $conn->close();
 }
 ?>
 
@@ -26,13 +34,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale="1.0">
     <title>Register</title>
     <link rel="stylesheet" href="css/log_style.css">
 </head>
 <body>
     <div class="container">
         <h2>Register</h2>
+        <?php if (isset($error)): ?>
+            <p class="error"><?php echo $error; ?></p>
+        <?php endif; ?>
+        <?php if (isset($success)): ?>
+            <p class="success"><?php echo $success; ?></p>
+        <?php endif; ?>
         <form action="register.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" required><br><br>

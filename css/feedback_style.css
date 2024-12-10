@@ -130,16 +130,32 @@ header {
     border-radius: 4px;
 }
 
-.edit-feedback-form input[type="submit"], .delete-feedback-form input[type="submit"] {
-    background-color: #fda828;
+.delete-feedback-form input[type="submit"] {
+    background-color: #c26f21;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.edit-feedback-form input[type="submit"]:hover, .delete-feedback-form input[type="submit"]:hover {
-    background-color: #f39c12;
+.edit-feedback-form input[type="submit"] {
+    width: 100%;
+    color: white;
+    background-color:  #29b2bf;
+    padding: 0.5rem;
+    margin-top: 0.5rem; 
+    border: #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+.edit-feedback-form input[type="submit"]:hover{
+    background-color: #09a3b1;
+}
+
+.delete-feedback-form input[type="submit"]:hover {
+    background-color: #a35b17;
 }
 
 footer {

@@ -71,9 +71,11 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
      CREATE TABLE feedback (
          id INT AUTO_INCREMENT PRIMARY KEY,
          municipality_id INT NOT NULL,
+         user_id INT NOT NULL,
          comment TEXT NOT NULL,
          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-         FOREIGN KEY (municipality_id) REFERENCES municipalities(id)
+         FOREIGN KEY (municipality_id) REFERENCES municipalities(id),
+         FOREIGN KEY (user_id) REFERENCES users(id)
      );
 
      CREATE TABLE quiz_questions (
@@ -187,47 +189,41 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
 - **Username:** admin
 - **Password:** admin123
 
-### Directory Structure
+## Contributing
 
-Hugyaw/
-├── css/
-│   ├── admin_style.css
-│   ├── Barotac_Nuevo.css
-│   ├── Barotac_Viejo.css
-│   ├── Cabatuan.css
-│   ├── Leon.css
-│   ├── log_style.css
-│   ├── quiz_style.css
-│   └── style.css
-├── images/
-│   ├── Barotac_Nuevo/
-│   │      ├── Barotac Nuevo.jpg
-│   │      └── Tamasak.png
-│   ├── Barotac_Viejo/
-│   │      └── Barotac Viejo.jpg
-│   ├── Cabatuan/
-│   │      └── Cabatuan.jpg
-│   └── Leon/
-│           └── Leon.jpg
-├── html/
-│   ├── Barotac Nuevo.html
-│   ├── Barotac Viejo.html
-│   ├── Cabatuan.html
-│   └── Leon.html
-├── videos/
-│   ├── Barotac Nuevo/
-│   │      ├── Hiliusa.mp4
-│   │      └── Tamasak.mp4
-│   ├── Barotac Viejo/
-│   ├── Cabatuan/
-│   └── Leon/
-├── db_connection.php
-├── admin_dashboard.php
-├── feedback.php
-├── Festival.php
-├── quiz.php
-├── quiz_result.php
-├── login.php
-├── register.php
-├── logout.php
-└── README.md
+We welcome contributions to the Hugyaw project! To contribute, follow these steps:
+
+1. **Fork the Repository**:
+   - Click the "Fork" button at the top right of the repository page on GitHub.
+
+2. **Clone Your Fork**:
+   - Clone your forked repository to your local machine:
+     ```bash
+     git clone https://github.com/your-username/Hugyaw
+     ```
+
+3. **Create a Branch**:
+   - Create a new branch for your feature or bug fix:
+     ```bash
+     git checkout -b feature-or-bugfix-name
+     ```
+
+4. **Make Your Changes**:
+   - Make your changes to the codebase.
+
+5. **Commit Your Changes**:
+   - Commit your changes with a descriptive commit message:
+     ```bash
+     git commit -m "Description of the changes"
+     ```
+
+6. **Push to Your Fork**:
+   - Push your changes to your forked repository:
+     ```bash
+     git push origin feature-or-bugfix-name
+     ```
+
+7. **Create a Pull Request**:
+   - Open a pull request to the main repository with a description of your changes.
+
+Thank you for contributing to Hugyaw!
