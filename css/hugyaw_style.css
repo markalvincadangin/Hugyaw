@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -159,6 +158,47 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+.feedbacks {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedbacks h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#feedbackList {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feedback p {
+    margin: 0.5rem 0;
+}
+
+.feedback p strong {
+    color: #333;
+}
+
+.feedback p small {
+    color: #666;
+}
+
 footer {
     background: #333; /* Background color */
     color: white; /* Text color */

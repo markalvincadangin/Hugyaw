@@ -5,6 +5,19 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
+
+$municipalitiesQuery = "SELECT id, name FROM municipalities";
+$municipalitiesResult = $conn->query($municipalitiesQuery);
+
+$feedbackQuery = "SELECT feedback.id, feedback.comment, feedback.created_at, municipalities.name AS municipality, users.username FROM feedback JOIN municipalities ON feedback.municipality_id = municipalities.id JOIN users ON feedback.user_id = users.id";
+$feedbackResult = $conn->query($feedbackQuery);
+
+$feedback = [];
+if ($feedbackResult) {
+    $feedback = $feedbackResult->fetch_all(MYSQLI_ASSOC);
+} else {
+    echo "Error fetching feedback: " . $conn->error;
+}
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +89,19 @@ if (!isset($_SESSION['user_id'])) {
                     <p class="text">Leon, Iloilo</p>
                 </a>
             </div>
+        </div>
+    </section>
+    <section class="feedbacks">
+        <h2>Feedbacks</h2>
+        <div id="feedbackList">
+            <?php foreach ($feedback as $comment): ?>
+                <div class="feedback">
+                    <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong> 
+                    comment for <strong><?php echo htmlspecialchars($comment['municipality']); ?>, Iloilo:</strong>
+                    <?php echo htmlspecialchars($comment['comment']); ?></p>
+                    <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
+                </div>
+            <?php endforeach; ?>
         </div>
     </section>
     <footer>
