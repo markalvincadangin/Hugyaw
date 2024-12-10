@@ -220,7 +220,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                 <input type="text" name="option4" id="option4" required><br><br>
                 <label for="correct_option">Correct Option (1-4):</label>
                 <input type="number" name="correct_option" id="correct_option" min="1" max="4" required><br><br>
-                <input type="submit" name="add_question" value="Add Question">
+                <input type="submit" name="add_question" value="Add Question" class="edit-button">
             </form>
 
             <?php foreach ($questions as $question): ?>
@@ -238,8 +238,8 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                     <input type="text" name="option4" value="<?php echo htmlspecialchars($question['option4']); ?>" required><br><br>
                     <label for="correct_option">Correct Option (1-4):</label>
                     <input type="number" name="correct_option" value="<?php echo $question['correct_option']; ?>" min="1" max="4" required><br><br>
-                    <input type="submit" name="edit_question" value="Edit Question">
-                    <input type="submit" name="delete_question" value="Delete Question">
+                    <input type="submit" name="edit_question" value="Edit Question" class="edit-button">
+                    <input type="submit" name="delete_question" value="Delete Question" class="delete-button">
                 </form>
                 <hr>
             <?php endforeach; ?>
@@ -257,7 +257,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                         <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
                         <form action="admin_dashboard.php" method="POST" class="delete-feedback-form">
                             <input type="hidden" name="feedback_id" value="<?php echo $comment['id']; ?>">
-                            <input type="submit" name="delete_feedback" value="Delete">
+                            <input type="submit" name="delete_feedback" value="Delete" class="delete-button">
                         </form>
                     </div>
                     <hr>
@@ -274,18 +274,18 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                     <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
                     <form action="admin_dashboard.php" method="POST" class="edit-user-form">
                         <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
-                        <label for="username">Username:</label>
-                        <input type="text" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
-                        <label for="role">Role:</label>
-                        <select name="role" required>
+                        <label for="username-<?php echo $user['id']; ?>">Username:</label>
+                        <input type="text" id="username-<?php echo $user['id']; ?>" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
+                        <label for="role-<?php echo $user['id']; ?>">Role:</label>
+                        <select id="role-<?php echo $user['id']; ?>" name="role" required>
                             <option value="user" <?php if ($user['role'] == 'user') echo 'selected'; ?>>User</option>
                             <option value="admin" <?php if ($user['role'] == 'admin') echo 'selected'; ?>>Admin</option>
                         </select><br><br>
-                        <input type="submit" name="edit_user" value="Edit User">
+                        <input type="submit" name="edit_user" value="Edit User" class="edit-button">
                     </form>
                     <form action="admin_dashboard.php" method="POST" class="delete-user-form">
                         <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
-                        <input type="submit" name="delete_user" value="Delete User">
+                        <input type="submit" name="delete_user" value="Delete User" class="delete-button">
                     </form>
                 </div>
                 <hr>
@@ -304,7 +304,7 @@ $scores = $scoresResult->fetch_all(MYSQLI_ASSOC);
                         <p><strong>Score:</strong> <?php echo htmlspecialchars($score['score']); ?></p>
                         <form action="admin_dashboard.php" method="POST" class="delete-score-form">
                             <input type="hidden" name="score_id" value="<?php echo $score['id']; ?>">
-                            <input type="submit" name="delete_score" value="Delete Score">
+                            <input type="submit" name="delete_score" value="Delete Score" class="delete-button">
                         </form>
                     </div>
                     <hr>
