@@ -13,13 +13,13 @@ body {
 }
 
 header {
-    background-color: #fda828; 
+    background-color: #fda828;
     padding: 10px 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    position: sticky; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -27,9 +27,9 @@ header {
 .logo {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     font-size: 24px;
-    color: #ffffff; 
+    color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -37,7 +37,7 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px; 
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
@@ -49,18 +49,18 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 16px;
     padding: 5px 10px;
-    border-radius: 4px; 
-    transition: all 0.3s ease; 
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #fff; 
+    color: #fff;
     background-color: #f39c12;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 main {
@@ -72,6 +72,33 @@ main {
     border-radius: 8px;
 }
 
+.action-section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.action-section h1 {
+    margin-bottom: 1rem;
+    color: #fda828;
+}
+
+.action-section p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.action-section .action-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
 .admin-section {
     margin-bottom: 2rem;
 }
@@ -81,17 +108,18 @@ main {
     color: #fda828;
 }
 
-.admin-form {
+/* Manage Quiz Questions */
+.quiz-form {
     margin-bottom: 1rem;
 }
 
-.admin-form label {
+.quiz-form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-.admin-form input[type="text"], .admin-form input[type="password"], .admin-form select, .admin-form textarea {
+.quiz-form input[type="text"], .quiz-form input[type="password"], .quiz-form select, .quiz-form textarea {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
@@ -99,43 +127,176 @@ main {
     border-radius: 4px;
 }
 
-.admin-form input[type="submit"] {
-    background-color: #fda828;
-    color: white;
-    border: none;
+.quiz-form .edit-button, .quiz-form .delete-button {
     padding: 0.75rem 1.5rem;
+    border: none;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-.admin-form input[type="submit"]:hover {
-    background-color: #f39c12;
+.quiz-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
 }
 
-.delete-user-form input[type="submit"], .delete-score-form input[type="submit"] {
+.quiz-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.quiz-form .delete-button {
     background-color: #c26f21;
     color: white;
-    border: none;
+}
+
+.quiz-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Feedback */
+.feedback-form {
+    margin-bottom: 1rem;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.feedback-form input[type="text"], .feedback-form input[type="password"], .feedback-form select, .feedback-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.feedback-form .edit-button, .feedback-form .delete-button {
     padding: 0.75rem 1.5rem;
+    border: none;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
-.delete-user-form input[type="submit"]:hover, .delete-score-form input[type="submit"]:hover {
+.feedback-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.feedback-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.feedback-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.feedback-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Users */
+.user-form {
+    margin-bottom: 1rem;
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.user-form input[type="text"], .user-form input[type="password"], .user-form select, .user-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.user-form .edit-button, .user-form .delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.user-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.user-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.user-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.user-form .delete-button:hover {
+    background-color: #a35b17;
+}
+
+/* Manage Scores */
+.score-form {
+    margin-bottom: 1rem;
+}
+
+.score-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.score-form input[type="text"], .score-form input[type="password"], .score-form select, .score-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.score-form .edit-button, .score-form .delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.score-form .edit-button {
+    background-color: #29b2bf;
+    color: white;
+}
+
+.score-form .edit-button:hover {
+    background-color: #09a3b1;
+}
+
+.score-form .delete-button {
+    background-color: #c26f21;
+    color: white;
+}
+
+.score-form .delete-button:hover {
     background-color: #a35b17;
 }
 
 footer {
-    background: #333; 
-    color: white; 
-    padding: 1rem; 
-    font-size: 0.9rem; 
-    width: 100%; 
-    margin: 0; 
-    left: 0; 
-    right: 0; 
-    position: relative; 
+    background: #333;
+    color: white;
+    padding: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    position: relative;
     text-align: center;
 }

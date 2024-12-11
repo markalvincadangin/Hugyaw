@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="/Hugyaw/css/Leon.css">
 </head>
 <body>
-    <audio id="background-audio" autoplay loop>
-        <source src="/Hugyaw/audio/Leon.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
     <header>
         <nav>
             <ul class="nav-links">
@@ -34,7 +30,6 @@
     <section>
         <video id="leon-video" controls>
             <source src="/Hugyaw/videos/Leon/Leon.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
     </section>
     <section>
@@ -54,7 +49,6 @@
         <section>
             <video controls>
                 <source src="/Hugyaw/videos/Leon/Kaing.mp4" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </section>
         <article>
@@ -66,6 +60,11 @@
                 Through captivating performances and artistic showcases, the Handuraw Festival reflects Leon’s vibrant spirit, creativity, and deep connection to its past, making it a meaningful tribute to its people and culture.
             </p>
         </article>
+        <section>
+            <video controls>
+                <source src="/Hugyaw/videos/Leon/Handuraw.mp4" type="video/mp4">
+            </video>
+        </section>
     </section>
     <section class="content">
         <div class="explanation">
@@ -95,21 +94,5 @@
     <footer>
         <p>© 2024 Hugyaw | All rights reserved.</p>
     </footer>
-    <script>
-        const backgroundAudio = document.getElementById('background-audio');
-        const video = document.getElementById('leon-video');
-
-        video.addEventListener('play', () => {
-            backgroundAudio.pause();
-        });
-
-        video.addEventListener('pause', () => {
-            backgroundAudio.play();
-        });
-
-        video.addEventListener('ended', () => {
-            backgroundAudio.play();
-        });
-    </script>
 </body>
 </html>

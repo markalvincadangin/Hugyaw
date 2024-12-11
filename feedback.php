@@ -107,6 +107,7 @@ if (!$municipalitiesResultView) {
             </ul>
         </nav>
         <h1 class="logo">Hugyaw</h1>
+        <h3 class="display-user">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
     </header>
     <main>
         <section class="feedback-section">

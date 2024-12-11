@@ -80,6 +80,7 @@ $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
             </ul>
         </nav>
         <h1 class="logo">Hugyaw</h1>
+        <h3 class="display-user">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
     </header>
     <main>
         <form id="quiz-form" action="quiz_result.php" method="POST">

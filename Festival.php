@@ -6,14 +6,18 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$feedbackQuery = "SELECT f.comment, m.name AS municipality_name, u.username FROM feedback f JOIN municipalities m ON f.municipality_id = m.id JOIN users u ON f.user_id = u.id ORDER BY f.created_at DESC";
+$municipalitiesQuery = "SELECT id, name FROM municipalities";
+$municipalitiesResult = $conn->query($municipalitiesQuery);
+
+$feedbackQuery = "SELECT feedback.id, feedback.comment, feedback.created_at, municipalities.name AS municipality, users.username FROM feedback JOIN municipalities ON feedback.municipality_id = municipalities.id JOIN users ON feedback.user_id = users.id";
 $feedbackResult = $conn->query($feedbackQuery);
 
-if (!$feedbackResult) {
-    die("Query failed: " . $conn->error);
+$feedback = [];
+if ($feedbackResult) {
+    $feedback = $feedbackResult->fetch_all(MYSQLI_ASSOC);
+} else {
+    echo "Error fetching feedback: " . $conn->error;
 }
-
-$feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +42,7 @@ $feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
             </ul>
         </nav>
         <h1 class="logo">Hugyaw</h1>
+        <h3 class="display-user">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
     </header>
     <section class="head">
         <div class="head-content">
@@ -87,20 +92,18 @@ $feedbacks = $feedbackResult->fetch_all(MYSQLI_ASSOC);
             </div>
         </div>
     </section>
-    <section class="feedback-section">
-        <h2>Feedback</h2>
-        <?php if (count($feedbacks) > 0): ?>
-            <ul class="feedback-list">
-                <?php foreach ($feedbacks as $feedback): ?>
-                    <li>
-                        <strong><?php echo htmlspecialchars($feedback['username']); ?> (<?php echo htmlspecialchars($feedback['municipality_name']); ?>):</strong>
-                        <?php echo htmlspecialchars($feedback['comment']); ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else: ?>
-            <p>No feedback available.</p>
-        <?php endif; ?>
+    <section class="feedbacks">
+        <h2>Feedbacks</h2>
+        <div id="feedbackList">
+            <?php foreach ($feedback as $comment): ?>
+                <div class="feedback">
+                    <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong> 
+                    comment for <strong><?php echo htmlspecialchars($comment['municipality']); ?>, Iloilo:</strong>
+                    <?php echo htmlspecialchars($comment['comment']); ?></p>
+                    <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </section>
     <footer>
         <p>© 2024 Hugyaw | All rights reserved.</p>
