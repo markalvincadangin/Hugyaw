@@ -42,6 +42,7 @@ if ($feedbackResult) {
             </ul>
         </nav>
         <h1 class="logo">Hugyaw</h1>
+        <h3 class="display-user">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
     </header>
     <section class="head">
         <div class="head-content">

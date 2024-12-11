@@ -33,7 +33,7 @@ $leaderboard = $leaderboardResult->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
-    <link rel="stylesheet" href="css/quiz_style.css">
+    <link rel="stylesheet" href="css/quiz_result_style.css">
 </head>
 <body>
     <header>
@@ -42,10 +42,14 @@ $leaderboard = $leaderboardResult->fetch_all(MYSQLI_ASSOC);
                 <li><a href="Festival.php">Home</a></li>
                 <li><a href="feedback.php">Feedbacks</a></li>
                 <li><a href="quiz.php">Quiz</a></li>
+                <?php if ($_SESSION['role'] == 'admin'): ?>
+                    <li><a href="admin_dashboard.php">Admin</a></li>
+                <?php endif; ?>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
         <h1 class="logo">Hugyaw</h1>
+        <h3 class="display-user">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
     </header>
     <main>
         <section class="result-section">

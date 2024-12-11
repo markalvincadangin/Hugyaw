@@ -34,6 +34,15 @@ header {
     text-decoration: none;
 }
 
+.display-user{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    color: #ffffff; 
+    font-size: medium;
+    text-decoration: black;
+}
+
 .nav-links {
     list-style: none;
     display: flex;

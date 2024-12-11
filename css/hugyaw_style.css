@@ -3,6 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
 header {
     background-color: #fda828; 
     padding: 10px 25px;
@@ -21,6 +30,14 @@ header {
     font-size: 24px;
     color: #ffffff; 
     text-transform: uppercase;
+    text-decoration: black;
+}
+
+.display-user{
+    left: 50%;
+    transform: translateX(-50%); 
+    color: #ffffff; 
+    font-size: medium;
     text-decoration: black;
 }
 
