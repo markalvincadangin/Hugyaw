@@ -95,6 +95,7 @@ if ($feedbackResult) {
     <section class="feedbacks">
         <h2>Feedbacks</h2>
         <div id="feedbackList">
+        <?php if (isset($feedback) && count($feedback) > 0): ?>
             <?php foreach ($feedback as $comment): ?>
                 <div class="feedback">
                     <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong> 
@@ -103,8 +104,12 @@ if ($feedbackResult) {
                     <p><small>Posted on: <?php echo $comment['created_at']; ?></small></p>
                 </div>
             <?php endforeach; ?>
+       
+        <?php else: ?>
+                <p>No feedback available at this moment.</p>
+            <?php endif; ?>
         </div>
-    </section>
+    </section> 
     <footer>
         <p>© 2024 Hugyaw | All rights reserved.</p>
     </footer>

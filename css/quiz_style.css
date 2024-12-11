@@ -25,22 +25,19 @@ header {
 }
 
 .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); 
     font-size: 24px;
     color: #ffffff; 
     text-transform: uppercase;
     text-decoration: none;
-}
-
-.display-user{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); 
-    color: #ffffff; 
-    font-size: medium;
-    text-decoration: black;
+    transform: translateX(-50%);
+}
+
+.display-user {
+    color: #fff;
+    font-size: 16px;
+    margin-left: auto;
 }
 
 .nav-links {

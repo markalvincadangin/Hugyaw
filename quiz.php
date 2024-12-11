@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch quiz questions
+// Get quiz questions from the database
 $questionsQuery = "SELECT * FROM quiz_questions ORDER BY RAND() LIMIT 15";
 $questionsResult = $conn->query($questionsQuery);
 
