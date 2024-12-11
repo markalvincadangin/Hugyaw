@@ -150,21 +150,7 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
 
 ## Usage
 
-- **Submit Feedback**: Navigate to the festival page, select a municipality, and submit your feedback.
+- **Submit Feedback**: Navigate to the feedback page, select a municipality, and submit your feedback.
 - **View Feedback**: View feedback submitted by others on the festival page.
 - **Participate in Quiz**: Navigate to the quiz page and answer the quiz questions.
 - **Admin Dashboard**: Administrators can log in to the admin dashboard to manage quiz questions, feedback, users, and scores.
-
-## Contributing
-
-1. **Fork the Repository**: Create a copy of the repository under your GitHub account.
-2. **Clone Your Fork**: Clone your forked repository to your local machine.
-3. **Create a Branch**: Create a new branch for your feature or bug fix.
-4. **Make Your Changes**: Make your changes to the codebase.
-5. **Commit Your Changes**: Commit your changes with a descriptive commit message.
-6. **Push to Your Fork**: Push your changes to your forked repository.
-7. **Create a Pull Request**: Open a pull request to the main repository with a description of your changes.
-
-## License
-
-This project is licensed under the MIT License.
