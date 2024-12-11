@@ -88,6 +88,7 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
          role VARCHAR(50) NOT NULL
      );
      ```
+   - **Note**: Before clicking "Go", uncheck the "Enable foreign key checks" option.
    - Click "Go" to execute the queries.
 
 5. **Insert Data**:
