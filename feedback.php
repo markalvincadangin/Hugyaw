@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Fetch municipalities for the dropdown
+// Get all the municipalities in the database for the dropdown
 $municipalitiesQuery = "SELECT id, name FROM municipalities";
 $municipalitiesResult = $conn->query($municipalitiesQuery);
 
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_feedback'])) {
     $stmt->close();
 }
 
-// Get feedback for the selected municipality
+// Get feedback in the database for the selected municipality
 $feedback = [];
 if (isset($_GET['municipality_id'])) {
     $municipality_id = $_GET['municipality_id'];
@@ -78,7 +78,7 @@ if (isset($_GET['municipality_id'])) {
     $stmt->close();
 }
 
-// Fetch municipalities again for the view feedback dropdown
+// Get municipalities in the database again for the view feedback dropdown
 $municipalitiesResultView = $conn->query($municipalitiesQuery);
 
 if (!$municipalitiesResultView) {

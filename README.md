@@ -27,41 +27,26 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
 
 - XAMPP (or any other local server environment with PHP and MySQL)
 - Web browser
+- Git
+- GitHub Desktop
 
-### Step 1: Clone the Project from GitHub
+### Installation Steps
 
 1. **Clone the Repository**:
-   - Copy the repository URL.
-   - Open a terminal or Git Bash on your computer.
-   - Navigate to the directory where you want to clone the repository.
-   - Run the following command:
-     ```bash
-     git clone https://github.com/markalvincadangin/Hugyaw
-     ```
+    - Open GitHub Desktop.
+    - Click on `File` > `Clone repository`.
+    - In the `URL` tab, paste the repository URL: `https://github.com/markalvincadangin/Hugyaw.git`.
+    - Choose the local path where you want to clone the repository.
+    - Click on `Clone`.
 
-2. **Navigate to the Project Directory**:
-   - After cloning, navigate to the project directory:
-     ```sh
-     cd Hugyaw
-     ```
-
-### Step 2: Set Up the Database Using XAMPP
-
-1. **Start XAMPP**:
+2. **Start XAMPP**:
    - Open the XAMPP Control Panel.
    - Start the Apache and MySQL services.
 
-2. **Open phpMyAdmin**:
-   - In your browser, go to `http://localhost/phpmyadmin`.
-
-3. **Create a Database**:
-   - Click on the "New" button in the left sidebar.
-   - Enter a name for your database (`hugyaw`) and click "Create".
-
-4. **Create the Tables**:
-   - Click on the newly created database.
-   - Click on the "SQL" tab to open the SQL query editor.
-   - Paste the following SQL statements to create the necessary tables:
+3. **Set Up the Database**:
+   - Open your web browser and go to `http://localhost/phpmyadmin`.
+   - Create a new database named `hugyaw`.
+   - Click on the "SQL" tab and run the following SQL queries to create the necessary tables:
      ```sql
      CREATE TABLE municipalities (
          id INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,6 +88,7 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
          role VARCHAR(50) NOT NULL
      );
      ```
+   - **Note**: Before clicking "Go", uncheck the "Enable foreign key checks" option.
    - Click "Go" to execute the queries.
 
 5. **Insert Data**:
@@ -139,11 +125,7 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
      ('Which of the following activities is NOT a highlight of the Patubas Festival in Barotac Viejo?', 'Street Dancing and Float Parade', 'Agro-Industrial Fair', 'Musical Band Competition', 'Cultural Performance', 3);
      ```
 
-   - Click "Go" to execute the queries.
-
-### Step 3: Configure the Project
-
-1. **Update Database Connection**:
+5. **Update Database Connection**:
    - Open the [`db_connection.php`](db_connection.php ) file in your project.
    - Ensure the database connection details are correct:
      ```php
@@ -163,67 +145,13 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
      ?>
      ```
 
-### Run the Project
-
-1. **Place the project folder in the `htdocs` directory of your XAMPP installation (usually located at `C:\xampp\htdocs` on Windows).**
-
-2. **Open your browser and go to `http://localhost/Hugyaw` to view the project.**
+6. **Run the Project**:
+   - Place the project folder in the `htdocs` directory of your XAMPP installation (usually located at `C:\xampp\htdocs` on Windows).
+   - Open your browser and go to `http://localhost/Hugyaw` to view the project.
 
 ## Usage
 
-1. **Submit Feedback:**
-   - Select a municipality from the dropdown.
-   - Enter your feedback in the textarea.
-   - Click "Submit Feedback" to submit your feedback.
-
-2. **View Feedback:**
-   - Select a municipality from the dropdown in the "View Feedback" section.
-   - Click "View Feedback" to see the feedback submitted for the selected municipality.
-
-3. **Admin Dashboard:**
-   - Log in as an admin to access the admin dashboard.
-   - Manage quiz questions, feedback, users, and scores.
-
-### Admin Credentials
-
-- **Username:** admin
-- **Password:** admin123
-
-## Contributing
-
-We welcome contributions to the Hugyaw project! To contribute, follow these steps:
-
-1. **Fork the Repository**:
-   - Click the "Fork" button at the top right of the repository page on GitHub.
-
-2. **Clone Your Fork**:
-   - Clone your forked repository to your local machine:
-     ```bash
-     git clone https://github.com/your-username/Hugyaw
-     ```
-
-3. **Create a Branch**:
-   - Create a new branch for your feature or bug fix:
-     ```bash
-     git checkout -b feature-or-bugfix-name
-     ```
-
-4. **Make Your Changes**:
-   - Make your changes to the codebase.
-
-5. **Commit Your Changes**:
-   - Commit your changes with a descriptive commit message:
-     ```bash
-     git commit -m "Description of the changes"
-     ```
-
-6. **Push to Your Fork**:
-   - Push your changes to your forked repository:
-     ```bash
-     git push origin feature-or-bugfix-name
-     ```
-
-7. **Create a Pull Request**:
-   - Open a pull request to the main repository with a description of your changes.
-
-Thank you for contributing to Hugyaw!
+- **Submit Feedback**: Navigate to the feedback page, select a municipality, and submit your feedback.
+- **View Feedback**: View feedback submitted by others on the festival page.
+- **Participate in Quiz**: Navigate to the quiz page and answer the quiz questions.
+- **Admin Dashboard**: Administrators can log in to the admin dashboard to manage quiz questions, feedback, users, and scores.
