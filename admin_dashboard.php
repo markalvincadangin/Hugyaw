@@ -118,7 +118,7 @@ if (isset($_POST['delete_score'])) {
     $stmt->close();
 }
 
-// Fetch all quiz questions
+// Get all quiz questions from the database
 $questionsQuery = "SELECT * FROM quiz_questions";
 $questionsResult = $conn->query($questionsQuery);
 
@@ -128,7 +128,7 @@ if (!$questionsResult) {
 
 $questions = $questionsResult->fetch_all(MYSQLI_ASSOC);
 
-// Fetch all feedback
+// Get all feedback from the database
 $feedbackQuery = "SELECT f.*, u.username FROM feedback f JOIN users u ON f.user_id = u.id ORDER BY f.created_at DESC";
 $feedbackResult = $conn->query($feedbackQuery);
 
@@ -138,7 +138,7 @@ if (!$feedbackResult) {
 
 $feedback = $feedbackResult->fetch_all(MYSQLI_ASSOC);
 
-// Fetch all users
+// Get all users from the database
 $usersQuery = "SELECT * FROM users";
 $usersResult = $conn->query($usersQuery);
 
@@ -148,7 +148,7 @@ if (!$usersResult) {
 
 $users = $usersResult->fetch_all(MYSQLI_ASSOC);
 
-// Fetch all scores
+// Get all quiz scores from the database
 $scoresQuery = "SELECT quiz_scores.id, users.username, quiz_scores.score FROM quiz_scores JOIN users ON quiz_scores.user_id = users.id ORDER BY quiz_scores.score DESC, quiz_scores.created_at ASC";
 $scoresResult = $conn->query($scoresQuery);
 

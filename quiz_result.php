@@ -10,13 +10,13 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $score = $_POST['score'];
 
-// Insert score into database
+// Insert score into the database
 $stmt = $conn->prepare("INSERT INTO quiz_scores (user_id, score) VALUES (?, ?)");
 $stmt->bind_param("ii", $user_id, $score);
 $stmt->execute();
 $stmt->close();
 
-// Fetch top scores for leaderboard
+// Get top scores from database for leaderboard
 $leaderboardQuery = "SELECT users.username, quiz_scores.score FROM quiz_scores JOIN users ON quiz_scores.user_id = users.id ORDER BY quiz_scores.score DESC, quiz_scores.created_at ASC LIMIT 10";
 $leaderboardResult = $conn->query($leaderboardQuery);
 

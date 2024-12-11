@@ -28,17 +28,16 @@ The Hugyaw project is a website designed to celebrate and preserve the rich cult
 - XAMPP (or any other local server environment with PHP and MySQL)
 - Web browser
 - Git
+- GitHub Desktop
 
 ### Installation Steps
 
 1. **Clone the Repository**:
-   - Open your terminal or Git Bash.
-   - Navigate to the directory where you want to clone the repository.
-   - Run the following command:
-     ```bash
-     git clone https://github.com/your-username/Hugyaw.git
-     ```
-   - Replace `your-username` with your GitHub username.
+    - Open GitHub Desktop.
+    - Click on `File` > `Clone repository`.
+    - In the `URL` tab, paste the repository URL: `https://github.com/markalvincadangin/Hugyaw.git`.
+    - Choose the local path where you want to clone the repository.
+    - Click on `Clone`.
 
 2. **Start XAMPP**:
    - Open the XAMPP Control Panel.
